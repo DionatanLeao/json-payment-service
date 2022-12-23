@@ -1,7 +1,7 @@
 package com.kafka.paymentservice.config;
 
+import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.admin.AdminClientConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +10,11 @@ import org.springframework.kafka.core.KafkaAdmin;
 
 import java.util.HashMap;
 
+@RequiredArgsConstructor
 @Configuration
 public class KafkaAdminConfig {
 
-    @Autowired
-    private KafkaProperties properties;
+    private final KafkaProperties properties;
 
     @Bean
     public KafkaAdmin kafkaAdmin() {
